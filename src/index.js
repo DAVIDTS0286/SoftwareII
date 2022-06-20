@@ -1,7 +1,9 @@
-'use restrict'
+import app from "./app";
+import { PORT } from "./config";
 
-const app = require('./app')
+// database
+import "./config/mongoose";
 
-app.listen(app.get('port'), ()=>{
-    console.log(`Server listen at port ${app.get('port')}`)
-})
+// Starting the server
+app.listen(PORT);
+console.log("Server on port", app.get("port"));

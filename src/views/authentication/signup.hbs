@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+
+    {{#if error}}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{error}}
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {{/if}}
+
+    <div class="card bg-dark text-light">
+      <div class="card-body p-4">
+        <h3 class="text-light h1">Crear cuenta</h3>
+        <form action="/auth/signup" method="POST">
+          <div class="mb-3">
+            <label for="email">Ingresa tu correo:</label>
+            <input
+              type="text"
+              name="email"
+              class="form-control bg-dark text-light border border-success"
+              placeholder="ejemplocorreo@dominio.com"
+              autofocus
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password">Ingresa tu correo:</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control bg-dark text-light border border-success"
+              placeholder="Contraseña"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="confirm-password">Repite tu Contraseña:</label>
+            <input
+              type="password"
+              name="confirm-password"
+              class="form-control bg-dark text-light border border-success"
+              placeholder="Confirma la contraseña"
+            />
+          </div>
+          <button class="btn btn-success btn-block">
+            Crear cuenta
+          </button>
+        </form>
+      </div>
+    </div>
+    <p class="my-3">Ya tienes una cuenta
+      <a href="/auth/signin" class="text-success">Ingresar</a></p>
+  </div>
+</div>
