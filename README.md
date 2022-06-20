@@ -1,4 +1,5 @@
 # SoftwareII
+Autores: Camilo Andres Pérez Moreno, David Leonardo Tamayo Sosa y Juan Felipe Suarez Galvis
 Proyecto correspondiente a la materia de software II
 Explicación de las habilidades de repositorios, acerca del video del monitor
 
