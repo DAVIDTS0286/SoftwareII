@@ -3,6 +3,7 @@ $(function() {
   $('#post-comment').hide();
   $('#btn-toggle-comment').click(e => {
     e.preventDefault();
+    alert("comentando")
     $('#post-comment').slideToggle();
   });
   
@@ -22,7 +23,7 @@ $(function() {
   $('#btn-delete').click(function (e) {
     e.preventDefault();
     let $this = $(this);
-    const response = confirm('Are you sure you want to delete this image?');
+    const response = confirm('Estas seguro de eliminar la publicacion?');
     if (response) {
       let imgId = $(this).data('id');
       $.ajax({
