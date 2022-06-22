@@ -25,6 +25,7 @@ $(function() {
     let $this = $(this);
     const response = confirm('Estas seguro de eliminar la publicacion?');
     if (response) {
+     
       let imgId = $(this).data('id');
       $.ajax({
         url: '/images/' + imgId,
@@ -33,7 +34,7 @@ $(function() {
         .done(function(result) {
           $this.removeClass('btn-danger').addClass('btn-success');
           $this.find('i').removeClass('fa-times').addClass('fa-check');
-          $this.append('<span>Deleted!</span>');
+          $this.append('<span> exitosa!</span>');
         });
     }
   });

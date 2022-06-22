@@ -1,7 +1,7 @@
 <div class="card bg-dark text-white">
   <div class="card-header d-flex justify-content-between align-items-center">
     <h2 class="card-title">{{ image.title }}</h2>
-    <button class="btn btn-danger btn-sm" id="btn-delete" data-id="{{image.uniqueId}}">
+    <button class="btn btn-danger btn-sm" id="btn-delete" data-id="{{image.filename}}">
       <i class="fa fa-times"></i> Borrar publicacion
     </button> 
   </div>
@@ -14,11 +14,12 @@
   <div class="card-footer d-flex justify-content-between align-items-center">
     <button class="btn btn-success" id="btn-like" data-id="{{image.filename}}">
       <i class="fas fa-thumbs-up"></i> Me gusta
+      <span class="spinner-border likes-count">{{image.likes}}</span>
     </button>
-    <p>
+    <!--p>
       <span class="likes-count">{{image.likes}}</span>
       <i class="fas fa-heart"></i>
-    </p>
+    </p-->
     <p>
       <i class="fas fa-eye"></i> {{image.views}}
     </p>
@@ -53,8 +54,8 @@
             placeholder="Añade un comentario"></textarea>
         </div>
         <div class="form-group">
-          <button class="btn btn-outline-warning" id="btn-comment">
-            <i class="fa fa-comment"></i> Publicacion
+          <button class="btn btn-warning" id="btn-comment">
+            <i class="fa fa-comment"></i> Publicar
           </button>
         </div>
       </form>

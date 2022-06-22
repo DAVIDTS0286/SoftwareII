@@ -1,0 +1,33 @@
+<div class="card mt-2 bg-dark text-white">
+  <div class="card-header d-flex align-items-center">
+    <span class="material-icons me-2">
+      
+    </span>
+    Recientemente subidos
+  </div>
+  <div class="card-body p-20">
+    <div class="row">
+      {{#each images}}
+        <div class="col-md-4 text-center">
+          <a href="/images/{{uniqueId}}">
+            <img
+              src="/uploads/{{filename}}"
+              alt="{{title}}"
+              class="w-100 h-100"
+              style="object-fit: cover;"
+            />
+          </a>
+        </div>
+      {{else}}
+        <div class="text-light text-center p-5">
+          <h1 class="text-light">Sin publicaciones que mostrar <strong>aún</strong></h1>
+          <p>Aqui se veran los seguros que publiques</p>
+          <!--span class="material-icons" style="font-size: 7rem;">
+            Agrega foto
+          </span-->
+        </div>
+      {{/each}}
+    </div>
+    {{#each images.title}}
+  </div>
+</div>

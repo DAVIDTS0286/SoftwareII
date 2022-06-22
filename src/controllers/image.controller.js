@@ -113,6 +113,8 @@ export const remove = async (req, res) => {
   const image = await Image.findOne({
     filename: { $regex: req.params.image_id },
   });
+
+  
   if (image) {
     await fs.unlink(path.resolve("./uploads/" + image.filename));
     await Comment.deleteOne({ image_id: image._id });
