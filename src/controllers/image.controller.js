@@ -71,8 +71,10 @@ export const create = (req, res) => {
         // redirect to the list of images
         res.redirect("/images/" + imageSaved.uniqueId);
       } else {
+        
         await fs.unlink(imageTempPath);
-        res.status(500).json({ error: "Unicamente se aceptan imagenes" });
+        res.status(500).json({ error: "Unicamente se aceptan imagenes"});
+
       }
     }
   };
