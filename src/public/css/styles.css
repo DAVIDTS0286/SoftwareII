@@ -7,3 +7,10 @@ body {
   width: 50%;
 }
 
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: crimson;
+    padding-top: 20px;
+}

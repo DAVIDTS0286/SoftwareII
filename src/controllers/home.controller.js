@@ -14,6 +14,7 @@ export const index = async (req, res, next) => {
     res.render("index", viewModel);
   } catch (error) {
     next(error);
+    alert("Hola")
   }
 };
 
