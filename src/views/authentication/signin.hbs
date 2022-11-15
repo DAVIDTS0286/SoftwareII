@@ -1,5 +1,34 @@
 <div class="row">
 
+  <div class="overlay float-start" id="overlay" >
+      <div class="popup" id="popup">
+        <a href="/" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i>Cerrar</a>
+        <br>
+        <h3>Mandanos un mensaje</h3>
+        <h4>y podremos ayudarte</h4>
+        <form action="https://formsubmit.co/gpssecures@gmail.com" method="POST" />
+
+        <div class="contenedor-inputs">
+          <input type="text" placeholder="Nombre" name="nombre">
+          <input type="email" placeholder="Correo" name="correo">
+
+          
+          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="A quien representas"
+            name="Tipo de persona">
+          <datalist id="datalistOptions">
+            <option value="Persona común">
+            <option value="Empresa">
+            <option value="Gerente">
+          </datalist>
+
+          <textarea class="contenedor-inputs " rows="5" cols="68" placeholder="Por favor, escribe aqui tu mensaje" name="mensaje"></textarea>
+        </div>
+        <input type="submit" class="btn btn-warning" value="Enviar">
+
+        </form>
+      </div>
+    </div>
+
   <div class="col-md-4 offset-md-4">
 
     {{#if success}}
@@ -50,12 +79,12 @@
 
     </div>
 
-   <div class="text-light">
+    <!--div class="text-light">
       <p class="my-3">Aun no tienes una cuenta? - 
         <a href="/auth/signup" class="text-warning">Crea una!</a></p>
-      <!--p class="my-3">Perdiste tu contraseña?
-        <a href="/auth/recovery-password" class="text-success">Reestablecer contraseña</a></p-->
-
-    </div>
+      <!p class="my-3">Perdiste tu contraseña?
+        <a href="/auth/recovery-password" class="text-success">Reestablecer contraseña</a></p>
+      
+    </div-->
   </div>
 </div>

@@ -6,6 +6,17 @@
         {{error}}
         <button
           type="button"
+<<<<<<< Updated upstream
+=======
+          class="close"<div class="row">
+  <div class="col-md-4 offset-md-4">
+
+    {{#if error}}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{error}}
+        <button
+          type="button"
+>>>>>>> Stashed changes
           class="close"
           data-dismiss="alert"
           aria-label="Close"
@@ -15,7 +26,64 @@
       </div>
     {{/if}}
 
+<<<<<<< Updated upstream
     <div class="card bg-dark text-light " >
+=======
+    <div class="card bg-dark text-light ">
+      <div class="card-body p-3">
+        <h3 class="text-light h1" >Agregar Administrador</h3>
+        <form action="/auth/signup" method="POST">
+          <div class="mb-3">
+            <label for="email">Ingresa su correo:</label>
+            <input
+              type="email"
+              aria-describedby="emailHelp"
+              name="email"
+              class="form-control bg-dark text-light border border-warning"
+              placeholder="ejemplocorreo@dominio.com"
+              
+              autofocus
+            />
+            <!--input type="email" class="form-control" id="exampleInputEmail1" -->
+          </div>
+          <div class="mb-3">
+            <label for="password">Ingresa su contraseña:</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control bg-dark text-light border border-warning"
+              placeholder="Contraseña"
+            />
+          </div>
+          <!--div class="mb-3">
+            <label for="confirm-password">Repite tu Contraseña:</label>
+            <input
+              type="password"
+              name="confirm-password"
+              class="form-control bg-dark text-light border border-warning"
+              placeholder="Confirma la contraseña"
+            />
+          </div-->
+          <button class="btn btn-warning btn-block">
+            Crear cuenta
+          </button>
+        </form>
+      </div>
+    </div>
+    <!--p class="my-3">Ya tienes una cuenta
+      <a href="/auth/signin" class="text-warning">Ingresar</a></p-->
+  </div>
+</div>
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    {{/if}}
+
+    <div class="card bg-dark text-light ">
+>>>>>>> Stashed changes
       <div class="card-body p-3">
         <h3 class="text-light h1" >Agregar Administrador</h3>
         <form action="/auth/signup" method="POST">

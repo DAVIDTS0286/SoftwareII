@@ -1,7 +1,12 @@
+<<<<<<< Updated upstream
 
 # Node
 ./node_modules
 
+=======
+## Node
+node_modules
+>>>>>>> Stashed changes
 
 # uploads folder
 uploads
