@@ -12,6 +12,10 @@ export const renderSignIn = (req, res) => {
   });
 };
 
+
+
+
+
 export const signUp = passport.authenticate("signup", {
   successRedirect: "/auth/signin",
   failureRedirect: "/auth/signup",

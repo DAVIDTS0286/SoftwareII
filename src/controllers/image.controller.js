@@ -14,7 +14,7 @@ export const index = async (req, res, next) => {
   });
 
   // if image does not exists
-  if (!image) return next(new Error("No se encontro la imagen"));
+  if (!image) return next(new Error("No se encontro la publicacion"));
 
   // increment views
   const updatedImage = await Image.findOneAndUpdate(
@@ -71,8 +71,13 @@ export const create = (req, res) => {
         // redirect to the list of images
         res.redirect("/images/" + imageSaved.uniqueId);
       } else {
+        
         await fs.unlink(imageTempPath);
-        res.status(500).json({ error: "Solamente se aceptan imagenes" });
+        res.status(500).json({ error: "Unicamente se aceptan imagenes"});
+        /*return _context.abrupt("return", done(null, false, {
+          message: "Solo se aceptan imagenes"
+        }));
+        */
       }
     }
   };

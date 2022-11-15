@@ -1,0 +1,10 @@
+<form action="/auth/signin" method="POST"></formaction>
+          <label for="email">Ingresa tu correo:</label>
+          <input  type="text"
+              name="email"
+              class="form-control"
+              placeholder="ejemplocorreo@dominio.com"
+              autofocusid='email'>
+          <button type='submit' id='validate'>Validate!</button>
+          
+          <h2 id='result'>dd</h2>

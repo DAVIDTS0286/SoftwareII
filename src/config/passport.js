@@ -16,7 +16,7 @@ passport.use(
 
       // return an error if the email already exists
       if (userFound) {
-        return done(null, false, { message: "The username is already Taken" });
+        return done(null, false, { message: "El correo ya se encuentra en uso!" });
       }
 
       // create a new User
@@ -46,12 +46,12 @@ passport.use(
       const userFound = await User.findOne({ email });
 
       // if user does not exists
-      if (!userFound) return done(null, false, { message: "Not User found." });
+      if (!userFound) return done(null, false, { message: "No se encntro el usuario." });
 
       // match password
       const match = await userFound.matchPassword(password);
 
-      if (!match) return done(null, false, { message: "Incorrect Password." });
+      if (!match) return done(null, false, { message: "Contraseña Incorrecta" });
 
       return done(null, userFound);
     }
