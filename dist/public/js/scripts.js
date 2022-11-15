@@ -3,7 +3,7 @@ $(function() {
   $('#post-comment').hide();
   $('#btn-toggle-comment').click(e => {
     e.preventDefault();
-    alert("Lo sentimos aun no tenemos contamos con esta opcion")
+    alert("Lo sentimos aun no contamos con esta opcion")
     //$('#post-comment').slideToggle();
   });
   
@@ -23,9 +23,6 @@ $(function() {
         //$("#fa-times").find('i').removeClass('fa-times').addClass('fa-check');
         //$("#btn-like").append('<span> Hoola!</span>');
       });
-          /* $this.removeClass('btn-succes').addClass('btn-primary');
-          $this.find('i').removeClass('fa-times').addClass('fa-check');
-          $this.append('<span> Hoola!</span>'); */
        
   });
 
