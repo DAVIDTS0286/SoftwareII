@@ -7,8 +7,10 @@ Evidencias de creación del repositorio
 
 
 Para poder correr el repositorio es necesario inicializarlo con:
-npm run build
-npm start
+"Instalar todas las dependencias necesarias para la funcionalidad del proyecto"
+npm install --yes 
+"Correr el proyecto"
+npm start 
 
 
 Esto para poder iniciar las librerias necesarias del proyecto al igual que inicializar el servidor que se ejecuta en el puerto 3000
