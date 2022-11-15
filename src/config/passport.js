@@ -16,7 +16,11 @@ passport.use(
 
       // return an error if the email already exists
       if (userFound) {
+<<<<<<< Updated upstream
         return done(null, false, { message: "El usuario ya esta registrado!" });
+=======
+        return done(null, false, { message: "El correo ya se encuentra en uso!" });
+>>>>>>> Stashed changes
       }
 
       // create a new User
