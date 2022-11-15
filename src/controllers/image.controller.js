@@ -74,10 +74,7 @@ export const create = (req, res) => {
         
         await fs.unlink(imageTempPath);
         res.status(500).json({ error: "Unicamente se aceptan imagenes"});
-        /*return _context.abrupt("return", done(null, false, {
-          message: "Solo se aceptan imagenes"
-        }));
-        */
+
       }
     }
   };
