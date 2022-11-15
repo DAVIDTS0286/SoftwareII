@@ -7,9 +7,17 @@ Evidencias de creación del repositorio
 
 
 Para poder correr el repositorio es necesario inicializarlo con:
+
+
 "Instalar todas las dependencias necesarias para la funcionalidad del proyecto"
+
+
 npm install --yes 
+
+
 "Correr el proyecto"
+
+
 npm start 
 
 
