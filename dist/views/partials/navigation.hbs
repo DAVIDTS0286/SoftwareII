@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark p-2  ">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="/public/images/logo4.png" alt="imgShare" />
+
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse  align-items-right" id="navbarNav">
+      <h1 style=" color: aliceblue; font-family: Century Schoolbook; font-size: x-large; "> Localiza tu seguro</h1>
+    </div>
+    <!--div class="collapse navbar-collapse" id="navbarNav">
+
+    </div-->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+
+
+          
+
+
+          <a id="btn-abrir-popup" class="nav-link d-flex align-items-right" >
+            <span class="material-icons me-2">
+              drafts
+            </span>
+            Contactanos</a>
+        </li>
+        {{#unless user}}
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-right" href="/auth/signin">
+            <span class="material-icons me-2">
+              account_circle
+            </span>
+            Iniciar Sesion</a>
+        </li>
+        {{else}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Mi perfil
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/profile">Informacion</a>
+            <a class="dropdown-item" href="/auth/logout">Cerrar Sesion</a>
+          </div>
+        </li>
+        {{/unless}}
+      </ul>
+      </div-->
+    </div>
+</nav>

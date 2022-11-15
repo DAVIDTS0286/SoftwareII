@@ -5,11 +5,19 @@
     {{>head}}
   </head>
   <body>
-    {{>navi}}
+    {{>navigation}}
 
     <div class="container p-4">
-      {{{ body  }}} 
-     
+      <div class="row">
+        <div class="col-md-8">
+          {{{ body  }}} 
+        </div>
+        <div class="col-md-4">
+          {{>stats this}}
+          {{>popular this}}
+          {{>comments this}}
+        </div>
+      </div>
     </div>
 
     <!-- FOOTER -->

@@ -17,6 +17,10 @@ $(function() {
       console.log('back:', data)
         $('.likes-count').text(data.likes);
       });
+          $this.removeClass('btn-succes').addClass('btn-primary');
+          $this.find('i').removeClass('fa-times').addClass('fa-check');
+          $this.append('<span> Hoola!</span>');
+       
   });
 
   // Delete Button Request

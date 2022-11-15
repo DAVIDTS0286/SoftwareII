@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  {{>head}}
+</head>
+
+<body>
+
+  {{>navigation}}
+
+  <div class="container p-4">
+    <!-- Inicio -->
+
+    {{#unless user}}
+    <!-- Inicio unless-->
+
+    {{#unless image}}
+    <!--Comienzo de negacion-->
+    <div class="card mt-2 bg-dark text-white">
+      <div class="card-header d-flex align-items-center">
+        <span class="material-icons me-2">
+
+        </span>
+        Seguros que te pueden interesar
+      </div>
+      <div class="card-body p-5">
+        <div class="row">
+          {{#each images}}
+          <div class="col-md-4 text-center">
+            <a href="/images/{{uniqueId}}">
+              <img src="/uploads/{{filename}}" alt="{{title}}" class="w-100 h-100" style="object-fit: cover; " />
+              <br>
+              <div class="badge bg-primary text-wrap" style="width: 6rem;">
+                {{title}}
+              </div>
+            </a>
+          </div>
+          {{else}}
+          <div class="text-light text-center p-5">
+            <h1 class="text-light">Sin publicaciones que mostrar <strong>aún</strong></h1>
+            <p>Aqui se veran los seguros que publiques</p>
+            <!--span class="material-icons" style="font-size: 7rem;">
+            Agrega foto
+          </span-->
+          </div>
+          {{/each}}
+        </div>
+
+      </div>
+    </div>
+    <!--Fin de negacion-->
+    {{else}}
+
+    <div class="card bg-dark text-white">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h2 class="card-title">{{ image.title }}</h2>
+
+        <!--button class="btn btn-danger btn-sm" id="btn-delete" data-id="{{image.filename}}">
+          <i class="fa fa-times"></i> Borrar publicacion
+        </button-->
+      </div>
+      <div class="card-body">
+        <p>{{ image.description }}</p>
+        <div class="text-center">
+          <img src="/uploads/{{image.filename}}" class="img-fluid">
+        </div>
+      </div>
+      <div class="card-footer d-flex justify-content-between align-items-center">
+        <button class="btn btn-success btn-like btn-sm" id="btn-like" data-id="{{image.filename}}">
+
+          <p class="Me gust p-like">Me gusta</p> 
+          <span class="spinner-border likes-count">{{image.likes}}</span>
+        </button>
+        <!--p>
+        <span class="likes-count">{{image.likes}}</span>
+        <i class="fas fa-heart"></i>
+      </p-->
+        <p>
+          Visualizaciones :
+          <i class="fas fa-eye"></i> {{image.views}}
+        </p>
+        <p>
+          <i class="far fa-clock"></i>
+          {{timeago image.timestamp}}
+        </p>
+      </div>
+    </div>
+    <!-- COMMENTS -->
+    <div class="card mt-2 bg-dark text-white">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="card-title">Comentarios</h3>
+        <button class="btn btn-info" id="btn-toggle-comment">
+          <i class="fa fa-comments-o"></i> Publicar comentario
+        </button>
+      </div>
+      <div class="card-body">
+        <blockquote id="post-comment">
+          <form action="/images/{{ image.uniqueId }}/comment" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control bg-dark text-light border border-warning" name="name"
+                placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control bg-dark text-light border border-warning" name="email"
+                placeholder="Correo">
+            </div>
+            <div class="form-group">
+              <textarea name="comment" class="form-control bg-dark text-light border border-warning" rows="2"
+                placeholder="Añade un comentario"></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-warning" id="btn-comment">
+                <i class="fa fa-comment"></i> Publicar
+              </button>
+            </div>
+          </form>
+        </blockquote>
+        <ul class="list-group p-4">
+          {{#each comments}}
+          <li class="list-group-item">
+            <div class="row">
+              <a href="#" class="col text-center">
+                <img src="http://gravatar.com/avatar/{{gravatar}}?d=monsterid&s=45" />
+              </a>
+              <blockquote class="col">
+                <p class="lead">{{comment}}</p>
+                <footer class="blockquote-footer">
+                  {{name}}- {{timeago timestamp}}
+                </footer>
+              </blockquote>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <!-- Fin unless-->
+
+    {{/unless}}
+
+    {{else}}
+    <!-- Hola -->
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-8">
+          {{{ body }}}
+        </div>
+        <div class="col-md-4">
+          {{>stats this}}
+          {{>popular this}}
+          {{>comments this}}
+        </div>
+      </div>
+    </div>
+    <!-- Chao -->
+
+    {{/unless}}
+    <!-- Fin -->
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white">
+    <div class="container p-2">
+      <div class="row">
+
+
+
+
+        <div class="mx-auto text-center">
+
+          <div>
+            <p> Quieres compartir con nosotros tu seguro?  <a id="btn-abrir-popup2" >Contactanos</a></p>
+
+           
+          </div>
+
+          <p>GPS - Localiza tu seguro | &copy; Copyright {{getCurrentYear}}, All rights reserved</p>
+          <p>
+            <i class="fab fa-twitter-square fa-2x"></i>
+            <i class="fab fa-facebook-square fa-2x"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <a id="btn-abrir-popup1" class="btn btn-warning btn-abrir-popup btn-flotante ">Contactanos</a>
+
+    <div class="overlay float-start" id="overlay" >
+      <div class="popup" id="popup">
+        <a href="/" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i>Cerrar</a>
+        <br>
+        <h3>Mandanos un mensaje</h3>
+        <h4>y podremos ayudarte</h4>
+        <form action="https://formsubmit.co/gpssecures@gmail.com" method="POST" />
+
+        <div class="contenedor-inputs">
+          <input type="text" placeholder="Nombre" name="nombre">
+          <input type="email" placeholder="Correo" name="correo">
+
+          
+          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="A quien representas"
+            name="Tipo de persona">
+          <datalist id="datalistOptions">
+            <option value="Persona común">
+            <option value="Empresa">
+          </datalist>
+
+          <textarea class="contenedor-inputs " rows="5" cols="68" placeholder="Por favor, escribe aqui tu mensaje" name="mensaje"></textarea>
+        </div>
+        <input type="submit" class="btn btn-warning" value="Enviar">
+
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  {{>footer}}
+  <script src="/public/js/scripts.js"></script>
+</body>
+
+</html>
